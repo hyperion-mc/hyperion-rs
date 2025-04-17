@@ -16,7 +16,7 @@
 	</div>
 </div>
 
-<video autoplay width="1000" muted loop>
+<video autoplay muted loop class="demo-video">
 	<source src="/hyperion.webm" type="video/webm" />
 </video>
 
@@ -27,11 +27,15 @@
 	<Highlight language={rust} {code} />
 </div>
 
-<a href="https://github.com/hyperion-mc/hyperion/tree/main/events/tag">a complete custom event</a>
-<a href="https://discord.gg/WKBuTXeBye">join the discord</a>
+<div class="links-container">
+	<a href="https://github.com/hyperion-mc/hyperion/tree/main/events/tag">a complete custom event</a>
+	<a href="https://discord.gg/WKBuTXeBye">join the discord</a>
+</div>
 
 <style>
-	video {
+	.demo-video {
+		width: 100%;
+		max-width: 1000px;
 		margin-bottom: 40px;
 	}
 
@@ -84,6 +88,7 @@
 		border-left: 2px solid var(--glow-green);
 		padding: 15px 20px;
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+		box-sizing: border-box;
 	}
 
 	/* JetBrains UI Dark theme for highlight.js */
@@ -91,6 +96,8 @@
 		background-color: var(--code-bg) !important;
 		color: #a9b7c6 !important;
 		padding: 0 !important;
+		white-space: pre-wrap !important;
+		word-break: break-word !important;
 	}
 
 	:global(.hljs-keyword) {
@@ -149,5 +156,18 @@
 
 	:global(.hljs-name) {
 		color: #e8bf6a !important;
+	}
+
+	.links-container {
+		margin-bottom: 60px;
+		padding-bottom: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		align-items: center;
+	}
+
+	.links-container a {
+		display: block;
 	}
 </style>
