@@ -21,7 +21,7 @@
 </video>
 
 <h4>Minecraft protocol; your custom logic; fully modular & composable.</h4>
-<div class="tagline">here is how to implement regen</div>
+<div class="tagline">here is how to give all players regen</div>
 
 <div class="code-display">
 	<Highlight language={rust} {code} />

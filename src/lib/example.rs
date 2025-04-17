@@ -1,25 +1,30 @@
 #[derive(Component, Default, Copy, Clone, Debug)]
 pub struct LastDamaged {
+  // The tick we were last damaged
   pub tick: i64,
 }
 
 impl Module for RegenerationModule {
   fn module(world: &World) {
-    // Register component
+    // Register our new component
     world.component::<LastDamaged>();
 
-    // for every single player component, add LastDamaged component
+    // when a Player component is added onto an entity, add a LastDamaged component
+    // Player is a "tag" component to mark an entity as a player
+    // Note: if we wanted other entities to regenerate, we would add the trait to other
+    // components as well
     world
         .component::<Player>()
         .add_trait::<(flecs::With, LastDamaged)>();
 
+    // Query all entities with LastDamaged, Prev -> Health, and Health components
     system!(
       "regenerate_health",
       world,
       &mut LastDamaged,
       &(Prev, Health), // The health value last gametick
       &mut Health, // The current health value
-      &Compose($)
+      &Compose($) // This is a singleton component that is shared across all entities
     )
     .multi_threaded() // it is this easy to add multi-threading
     .each(|(last_damaged, prev_health, health, compose)| {
