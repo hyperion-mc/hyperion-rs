@@ -20,7 +20,7 @@
 	<source src="/hyperion.webm" type="video/webm" />
 </video>
 
-<h4>Minecraft protocol; your own custom logic.</h4>
+<h4>Minecraft protocol; your custom logic; fully modular & composable.</h4>
 <div class="tagline">here is how to implement regen</div>
 
 <div class="code-display">
