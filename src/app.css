@@ -1,0 +1,122 @@
+/*@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');*/
+
+/* Removed Monocraft .ttc font-face */
+/*@font-face {*/
+/*    font-family: 'Monocraft';*/
+/*    src: url('/fonts/Monocraft.ttc') format('truetype-collection'),*/
+/*        url('/fonts/Monocraft.ttc') format('collection');*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
+
+/* Removed Miracode font-face */
+/*@font-face {*/
+/*    font-family: 'Miracode';*/
+/*    src: url('/fonts/Miracode.ttf') format('truetype');*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
+
+@font-face {
+    font-family: 'Monocraft';
+    src: url('/fonts/Monocraft.ttc') format('truetype-collection'),
+        url('/fonts/Monocraft.ttc') format('collection');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Monocraft', monospace !important;
+
+    background-color: #0A0A0A;
+    /* Darker background */
+    color: #EAEAEA;
+    /* Slightly off-white text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+}
+
+code {
+    font-family: 'Monocraft', monospace !important;
+    font-size: 0.9em;
+
+    line-height: 1.45 !important;
+    /*font-family: 'Fira Code', monospace !important;*/
+    /*enable ligatures*/
+    /*font-feature-settings: "liga" 1;*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+:root {
+    /*--glow-green: #d1d1d1;*/
+    /*--glow-green-light: #cacaca;*/
+    --dark-bg: #0A0A0A;
+    /* Updated dark background */
+    --code-bg: #1a1a1a;
+    --text-secondary: #7d7d7d;
+}
+
+/**!*/
+
+/* Clean, minimal scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(169, 183, 198, 0.2);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(169, 183, 198, 0.4);
+}
+
+/* Transitions should be applied specifically where needed */
+
+/* Link styling */
+a {
+    color: #a9b7c6;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+    /*padding: 0.25em 0.5em;*/
+    /*margin: 0 0.5em;*/
+    display: inline-block;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(169, 183, 198, 0.3);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0.5em;
+    background-color: #a9b7c6;
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: calc(100% - 1em);
+}
