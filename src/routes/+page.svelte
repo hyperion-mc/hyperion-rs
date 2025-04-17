@@ -20,154 +20,158 @@
 	<source src="/hyperion.webm" type="video/webm" />
 </video>
 
-<h4>Minecraft protocol; your custom logic; fully modular & composable.</h4>
-<div class="tagline">here is how to give all players regen</div>
+<h4>Minecraft protocol; your own custom logic.</h4>
+<div class="tagline">using an <a href="https://github.com/SanderMertens/ecs-faq" target="_blank">Entity Component System</a>, give all
+	players regen
+</div>
+
 
 <div class="code-display">
 	<Highlight language={rust} {code} />
 </div>
 
 <div class="links-container">
-	<a href="https://github.com/hyperion-mc/hyperion/tree/main/events/tag">a complete custom event</a>
-	<a href="https://discord.gg/WKBuTXeBye">join the discord</a>
+	<a href="https://github.com/hyperion-mc/hyperion/tree/main/events/tag" target="_blank">a complete custom event</a>
+	<a href="https://discord.gg/WKBuTXeBye" target="_blank">join the discord</a>
 </div>
 
 <style>
-	.demo-video {
-		width: 100%;
-		max-width: 1000px;
-		margin-bottom: 40px;
-	}
 
-	.title {
-		margin-bottom: 40px;
-		position: relative;
-		text-align: center;
-	}
+    .demo-video {
+        width: 100%;
+        max-width: 1000px;
+        margin-bottom: 40px;
+    }
 
-	h1 {
-		/*font-size: 64px;*/
-		letter-spacing: 2px;
-		margin: 0;
-		color: #fff;
-		position: relative;
-		/* text-shadow:
-							0 0 5px rgba(0, 255, 0, 0.3),
-							0 0 10px rgba(0, 255, 0, 0.2); */
-		/*position: relative;*/
-	}
+    .title {
+        margin-bottom: 40px;
+        position: relative;
+        text-align: center;
+    }
 
-	.alpha-tag {
-		font-size: 0.4em;
-		background-color: var(--glow-green, #00ff00);
-		color: #000;
-		padding: 2px 6px;
-		border-radius: 3px;
-		vertical-align: middle;
-		display: inline-block;
-		margin-left: -15px;
-		margin-top: -10px;
-		letter-spacing: 1px;
-		font-weight: bold;
-		opacity: 0.8;
-	}
+    h1 {
+        /*font-size: 64px;*/
+        letter-spacing: 2px;
+        margin: 0;
+        color: #fff;
+        position: relative;
+        /* text-shadow:
+									0 0 5px rgba(0, 255, 0, 0.3),
+									0 0 10px rgba(0, 255, 0, 0.2); */
+        /*position: relative;*/
+    }
 
-	.tagline {
-		color: var(--text-secondary);
-		font-size: 16px;
-		/*margin-top: 5px;*/
-		letter-spacing: 1px;
-	}
+    .alpha-tag {
+        font-size: 0.4em;
+        background-color: var(--glow-green, #00ff00);
+        color: #000;
+        padding: 2px 6px;
+        border-radius: 3px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: -15px;
+        margin-top: -10px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        opacity: 0.8;
+    }
 
-	.code-display {
-		margin-top: 20px;
-		margin-bottom: 20px;
-		width: 100%;
-		max-width: 800px;
-		background-color: var(--code-bg);
-		border-left: 2px solid var(--glow-green);
-		padding: 15px 20px;
-		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-		box-sizing: border-box;
-	}
+    .tagline {
+        color: var(--text-secondary);
+        font-size: 16px;
+        /*margin-top: 5px;*/
+        letter-spacing: 1px;
+    }
 
-	/* JetBrains UI Dark theme for highlight.js */
-	:global(.hljs) {
-		background-color: var(--code-bg) !important;
-		color: #a9b7c6 !important;
-		padding: 0 !important;
-		white-space: pre-wrap !important;
-		word-break: break-word !important;
-	}
+    .code-display {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 900px;
+        background-color: var(--code-bg);
+        border-left: 2px solid var(--glow-green);
+        padding: 15px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+    }
 
-	:global(.hljs-keyword) {
-		color: #cc7832 !important;
-		font-weight: bold;
-	}
+    /* JetBrains UI Dark theme for highlight.js */
+    :global(.hljs) {
+        background-color: var(--code-bg) !important;
+        color: #a9b7c6 !important;
+        padding: 0 !important;
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+    }
 
-	:global(.hljs-function) {
-		color: #ffc66d !important;
-	}
+    :global(.hljs-keyword) {
+        color: #cc7832 !important;
+        font-weight: bold;
+    }
 
-	:global(.hljs-title) {
-		color: #ffc66d !important;
-	}
+    :global(.hljs-function) {
+        color: #ffc66d !important;
+    }
 
-	:global(.hljs-params) {
-		color: #a9b7c6 !important;
-	}
+    :global(.hljs-title) {
+        color: #ffc66d !important;
+    }
 
-	:global(.hljs-string) {
-		color: #6a8759 !important;
-	}
+    :global(.hljs-params) {
+        color: #a9b7c6 !important;
+    }
 
-	:global(.hljs-comment) {
-		color: #808080 !important;
-		font-style: italic;
-	}
+    :global(.hljs-string) {
+        color: #6a8759 !important;
+    }
 
-	:global(.hljs-number) {
-		color: #6897bb !important;
-	}
+    :global(.hljs-comment) {
+        color: #808080 !important;
+        font-style: italic;
+    }
 
-	:global(.hljs-built_in) {
-		color: #cc7832 !important;
-	}
+    :global(.hljs-number) {
+        color: #6897bb !important;
+    }
 
-	:global(.hljs-literal) {
-		color: #cc7832 !important;
-	}
+    :global(.hljs-built_in) {
+        color: #cc7832 !important;
+    }
 
-	:global(.hljs-type) {
-		color: #aabbcc !important;
-	}
+    :global(.hljs-literal) {
+        color: #cc7832 !important;
+    }
 
-	:global(.hljs-attribute) {
-		color: #9876aa !important;
-	}
+    :global(.hljs-type) {
+        color: #aabbcc !important;
+    }
 
-	:global(.hljs-symbol) {
-		color: #6a8759 !important;
-	}
+    :global(.hljs-attribute) {
+        color: #9876aa !important;
+    }
 
-	:global(.hljs-meta) {
-		color: #bbb529 !important;
-	}
+    :global(.hljs-symbol) {
+        color: #6a8759 !important;
+    }
 
-	:global(.hljs-name) {
-		color: #e8bf6a !important;
-	}
+    :global(.hljs-meta) {
+        color: #bbb529 !important;
+    }
 
-	.links-container {
-		margin-bottom: 60px;
-		padding-bottom: 40px;
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-		align-items: center;
-	}
+    :global(.hljs-name) {
+        color: #e8bf6a !important;
+    }
 
-	.links-container a {
-		display: block;
-	}
+    .links-container {
+        margin-bottom: 60px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .links-container a {
+        display: block;
+    }
 </style>
