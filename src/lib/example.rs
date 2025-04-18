@@ -2,8 +2,8 @@
 /// used for health regeneration calculations
 #[derive(Component, Default, Copy, Clone, Debug)]
 pub struct LastDamaged {
-  /// The tick we were last damaged
-  pub tick: i64,
+    /// The tick we were last damaged
+    pub tick: i64,
 }
 
 // A module (think like a Bukkit plugin or Bevy plugin)
@@ -61,9 +61,8 @@ impl Module for RegenerationModule {
       // Interpolate between base and max regeneration rates
       let regen_rate = BASE_REGEN + progress * (MAX_REGEN - BASE_REGEN);
 
-      // Apply regeneration, capped at max health
+      // Apply regeneration, capped at player's max health (20.0)
       health.heal(regen_rate);
-      **health = health.min(MAX_HEALTH);
     });
   }
 }
