@@ -19,7 +19,7 @@ impl Module for RegenerationModule {
         .component::<Health>()
         .add_trait::<(flecs::With, LastDamaged)>();
 
-    // Create a system that handles health regeneration
+    // This uses a Rust macro to define a system that handles health regeneration
     // This system queries all entities that have:
     // - LastDamaged: to track time since last damage
     // - Health (previous): the entity's health in the previous tick
