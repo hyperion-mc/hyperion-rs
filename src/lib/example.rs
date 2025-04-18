@@ -13,10 +13,10 @@ impl Module for RegenerationModule {
     // Register our component in the Entity Component System world
     world.component::<LastDamaged>();
 
-    // When a Player component is added to an entity, automatically add LastDamaged
+    // When a Health component is added to an entity, automatically add LastDamaged
     // Entities are composed of components instead of using inheritance
     world
-        .component::<Player>()
+        .component::<Health>()
         .add_trait::<(flecs::With, LastDamaged)>();
 
     // Create a system that handles health regeneration
@@ -24,6 +24,7 @@ impl Module for RegenerationModule {
     // - LastDamaged: to track time since last damage
     // - Health (previous): the entity's health in the previous tick
     // - Health (current): the entity's current health value
+    // - MaxHealth: the maximum health value of the entity
     // - Compose: a singleton component providing global game state
     system!(
       "regenerate_health",
@@ -31,10 +32,11 @@ impl Module for RegenerationModule {
       &mut LastDamaged,
       &(Prev, Health), // The health value from the previous game tick
       &mut Health, // The current health value
-      &Compose($)  // Singleton component with global game state
+      &MaxHealth, // The maximum health value of the entity
+      &Compose($)  // Singleton ($) component with global game state
     )
     .multi_threaded() // Enable parallel execution of this system (it is that easy!)
-    .each(|(last_damaged, prev_health, health, compose)| {
+    .each(|(last_damaged, prev_health, health, max_health, compose)| {
       // Skip dead entities
       if health.is_dead() {
           return;
@@ -61,8 +63,8 @@ impl Module for RegenerationModule {
       // Interpolate between base and max regeneration rates
       let regen_rate = BASE_REGEN + progress * (MAX_REGEN - BASE_REGEN);
 
-      // Apply regeneration, capped at player's max health (20.0)
-      health.heal(regen_rate);
+      // Apply regeneration, capped at max health
+      health.heal(regen_rate, max_health);
     });
   }
 }
