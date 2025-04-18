@@ -22,7 +22,7 @@
 
 <h4>Minecraft protocol; your own custom logic.</h4>
 <div class="tagline">using an <a href="https://github.com/SanderMertens/ecs-faq" target="_blank">Entity Component System</a>, give all
-	players regen
+	entities regen
 </div>
 
 
